@@ -23,18 +23,18 @@
     [:img {:class "op_twenty" :name (str "player" n) :id (str "player" n "i") :src (str url "imgs/" n ".png")
             :style {:width "75px" :height "75px"}
             :on-click (fn [e]
-                        (let [player (.getElementById js/document (str e.target.name))]
-                          (let [icon (.getElementById js/document (str e.target.id))]
-                            (let [slider (.getElementById js/document (str "player" n "v"))]
+                          (let [player (.getElementById js/document (str e.target.name))
+                                icon (.getElementById js/document (str e.target.id))
+                                slider (.getElementById js/document (str "player" n "v"))]
                               (cond
                                 player.paused (play player icon slider)
-                                :else (pause player icon slider))))))}]
+                                :else (pause player icon slider))))}]
     [:input {:class "vol-control-hidden" :id (str "player" n "v") :name (str "player" n) :type "range" :min "0" :max "100"
              :on-change (fn [e]
-                          (let [player (.getElementById js/document (str e.target.name))]
-                            (let [target (.-target e)]
-                              (let [value (.-value target)]
-                                (set-volume player value)))))}]])
+                          (let [player (.getElementById js/document (str e.target.name))
+                                target (.-target e)
+                                value (.-value target)]
+                              (set-volume player value)))}]])
 
 (defn app-component []
   [:div {:class "container"}
