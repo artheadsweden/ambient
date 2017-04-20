@@ -1,0 +1,88 @@
+
+    body {
+      animation: colorchange 400s infinite; /* animation-name followed by duration in seconds*/
+         /* you could also use milliseconds (ms) or something like 2.5s */
+      -webkit-animation: colorchange 400s infinite; /* Chrome and Safari */
+    }
+
+    @keyframes colorchange
+    {
+      0%   {background: #663333;}
+      25%  {background: #888800;}
+      50%  {background: #333366;}
+      75%  {background: #336633;}
+      100% {background: #663333;}
+    }
+
+    @-webkit-keyframes colorchange /* Safari and Chrome - necessary duplicate */
+    {
+      0%   {background: #663333;}
+      25%  {background: #888800;}
+      50%  {background: #333366;}
+      75%  {background: #336633;}
+      100% {background: #663333;}
+    }
+.header{
+    height: 50px;
+    width: 100%;
+    margin-top: 50px;
+}
+
+.menu-item {
+    width: 50%;
+    height: 50%;
+    opacity: 0.2;
+    margin-top: 50px;
+}
+
+.icon{
+    width: 128px;
+    height: 128px;
+
+    margin-top: 24px;
+}
+
+.speaker-container{
+    text-align: right;
+}
+
+#speaker{
+    width: 64px;
+    height: 64px;
+    position: fixed;
+    top: 20px;
+    margin-right: 75px;
+    -moz-transform: translateX(-100%);
+-ms-transform: translateX(-100%);
+-webkit-transform: translateX(-100%);
+-o-transform: translateX(-100%);
+transform: translateX(-100%);
+}
+
+.op_twenty {
+    opacity: 0.2;
+}
+
+.op_hundred {
+    opacity: 1.0;
+}
+
+.vol-control-hidden {
+  visibility: hidden;
+}
+
+.vol-control-visible {
+  visibility: visible;
+}
+
+input[type="range"] {
+    width: 124px;
+    height: 34px;
+
+    opacity: 0.2;
+}
+
+input[type="range"]::-webkit-slider-thumb{
+    border-radius: 10px;
+
+}
